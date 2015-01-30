@@ -14,6 +14,12 @@ l=D+D/2+5;
 
 function radius(diameter) = diameter / 2;
 
+module torus(diameter, tubeDiameter){
+	rotate_extrude(convexity = 10) 
+		translate([radius(diameter), 0, 0]) 
+			circle(r = radius(tubeDiameter));
+}
+
 module hook() {
     union() {
         difference() {

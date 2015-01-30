@@ -11,6 +11,8 @@ $fs=0.05;
 
 l=D+D/2+5;
 
+function radius(diameter) = diameter / 2;
+
 module hook() {
     union() {
         difference() {

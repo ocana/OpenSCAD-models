@@ -23,9 +23,7 @@ module torus(diameter, tubeDiameter){
 module hook() {
     union() {
         difference() {
-            rotate_extrude(convexity = 10) 
-					translate([radius(TORUS_DIAMETER), 0, 0]) 
-						circle(r = radius(HOOK_DIAMETER));
+            torus(TORUS_DIAMETER, HOOK_DIAMETER);
 
             translate([-radius(HOOK_DIAMETER) -radius(TORUS_DIAMETER), 0, -radius(HOOK_DIAMETER) - 0.05]) 
 					cube([HOOK_DIAMETER + TORUS_DIAMETER, radius(HOOK_DIAMETER) + radius(TORUS_DIAMETER),HOOK_DIAMETER + 0.1]);

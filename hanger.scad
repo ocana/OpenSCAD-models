@@ -1,7 +1,7 @@
 use <MCAD/boxes.scad>
 
 HOOK_DIAMETER = 5;
-TORUS_RADIUS = 6;
+TORUS_DIAMETER = 12;
 
 D=7.5;
 t=3;
@@ -18,14 +18,14 @@ module hook() {
     union() {
         difference() {
             rotate_extrude(convexity=10) 
-					translate([TORUS_RADIUS,0,0]) 
+					translate([radius(TORUS_DIAMETER),0,0]) 
 						circle(r=radius(HOOK_DIAMETER));
 
-            translate([-radius(HOOK_DIAMETER)-TORUS_RADIUS,0,-radius(HOOK_DIAMETER)-0.05]) 
-					cube([HOOK_DIAMETER+TORUS_RADIUS*2,radius(HOOK_DIAMETER)+TORUS_RADIUS,HOOK_DIAMETER+0.1]);
+            translate([-radius(HOOK_DIAMETER)-radius(TORUS_DIAMETER),0,-radius(HOOK_DIAMETER)-0.05]) 
+					cube([HOOK_DIAMETER+TORUS_DIAMETER,radius(HOOK_DIAMETER)+radius(TORUS_DIAMETER),HOOK_DIAMETER+0.1]);
         }
 
-        translate([TORUS_RADIUS,0,0]) 
+        translate([radius(TORUS_DIAMETER),0,0]) 
 				sphere(r=radius(HOOK_DIAMETER));
     };
 }
@@ -49,7 +49,7 @@ module hanger() {
             translate([D/2,0,0]) cube([D,h+0.1,D],center=true);
         }
     }
-    translate([0,l-3+h-TORUS_RADIUS-HOOK_DIAMETER/2,TORUS_RADIUS+h/2+R*2])
+    translate([0,l-3+h-radius(TORUS_DIAMETER)-HOOK_DIAMETER/2,radius(TORUS_DIAMETER)+h/2+R*2])
     rotate([180,0,0]) 
     rotate([0,90,0]) 
     hook();

@@ -1,7 +1,6 @@
 use <MCAD/boxes.scad>
 
 HOOK_DIAMETER = 5;
-d=5;
 D=7.5;
 t=3;
 h=10;

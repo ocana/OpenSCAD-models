@@ -14,8 +14,12 @@ l=D+D/2+5;
 module hook() {
     union() {
         difference() {
-            rotate_extrude(convexity=10) translate([r,0,0]) circle(r=d/2);
-            translate([-d/2-r,0,-d/2-0.05]) cube([d+r*2,d/2+r,d+0.1]);
+            rotate_extrude(convexity=10) 
+					translate([r,0,0]) 
+						circle(r=d/2);
+
+            translate([-d/2-r,0,-d/2-0.05]) 
+					cube([d+r*2,d/2+r,d+0.1]);
         }
         translate([r,0,0]) sphere(r=d/2);
     };

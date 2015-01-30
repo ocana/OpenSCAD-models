@@ -18,14 +18,14 @@ module hook() {
         difference() {
             rotate_extrude(convexity=10) 
 					translate([r,0,0]) 
-						circle(r=HOOK_DIAMETER/2);
+						circle(r=radius(HOOK_DIAMETER));
 
-            translate([-HOOK_DIAMETER/2-r,0,-HOOK_DIAMETER/2-0.05]) 
-					cube([HOOK_DIAMETER+r*2,HOOK_DIAMETER/2+r,HOOK_DIAMETER+0.1]);
+            translate([-radius(HOOK_DIAMETER)-r,0,-radius(HOOK_DIAMETER)-0.05]) 
+					cube([HOOK_DIAMETER+r*2,radius(HOOK_DIAMETER)+r,HOOK_DIAMETER+0.1]);
         }
 
         translate([r,0,0]) 
-				sphere(r=HOOK_DIAMETER/2);
+				sphere(r=radius(HOOK_DIAMETER));
     };
 }
 

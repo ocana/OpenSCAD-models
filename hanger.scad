@@ -100,11 +100,14 @@ module hangerCentralBox() {
 
 module hangerCornerBox() {
 	dimensions = [HANGER_HEIGHT, HANGER_WIDTH, HANGER_WIDTH];
+
 	roundedBox(dimensions, radius=1, sidesonly=true);
 }
 
 module hangerBox() {
-	translate([0, CUBE_LENGTH -HANGER_INTERNAL_THICKNESS + half(HANGER_WIDTH), 0]) {
+	offset = [0, CUBE_LENGTH -HANGER_INTERNAL_THICKNESS + half(HANGER_WIDTH), 0];
+
+	translate(offset) {
     	hangerCentralBox();
 		hangerCornerBox();
     }

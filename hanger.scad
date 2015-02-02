@@ -31,14 +31,15 @@ module hook() {
 	cuboid_height = HOOK_DIAMETER + DELTA;
 	dimensions = [torus_length, half(torus_length), cuboid_height];
 
+	new_offset_x = NEGATIVE_FACTOR * half(torus_length);
 	offset_x = -radius(HOOK_DIAMETER) -radius(TORUS_DIAMETER);
-	offset_z = NEGATIVE_FACTOR * (half(cuboid_height));
+	offset_z = NEGATIVE_FACTOR * half(cuboid_height);
 
     union() {
         difference() {
             torus(TORUS_DIAMETER, HOOK_DIAMETER);
 
-            translate([offset_x, 0, offset_z]) 
+            translate([new_offset_x, 0, offset_z]) 
 					cube(dimensions);
         }
 

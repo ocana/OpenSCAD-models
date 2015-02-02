@@ -12,7 +12,9 @@ HANGER_WIDTH = 10;
 
 CUBE_LENGTH = 16.25;
 
-D = 7.5;
+HANGER_INTERNAL_HEIGHT = 7.5;
+
+D = HANGER_INTERNAL_HEIGHT;
 t = 3;
 h = HANGER_WIDTH;
 R = half(HANGER_HEIGHT);
@@ -92,13 +94,13 @@ module externalCurvedPart() {
 }
 
 module internalCurvedPart() {
-	cylinder(r= D/2, h= HANGER_WIDTH + DELTA, center=true);
+	cylinder(r= half(HANGER_INTERNAL_HEIGHT), h= HANGER_WIDTH + DELTA, center=true);
 
     translate([0, l/2, 0]) 
-		cube([D, l + DELTA, HANGER_WIDTH + DELTA], center=true);
+		cube([HANGER_INTERNAL_HEIGHT, l + DELTA, HANGER_WIDTH + DELTA], center=true);
 
-	translate([t, D + 4, 0]) 
-		cube([HANGER_HEIGHT, D + 8.1, HANGER_WIDTH + DELTA], center=true);
+	translate([t, HANGER_INTERNAL_HEIGHT + 4, 0]) 
+		cube([HANGER_HEIGHT, HANGER_INTERNAL_HEIGHT + 8.1, HANGER_WIDTH + DELTA], center=true);
 }
 
 module hangerCurvedPart() {

@@ -67,6 +67,15 @@ module hook() {
     };
 }
 
+module hangerCentralExternalBox() {
+	rounded_box_offset = [0, 0, -0.75];
+	rounded_box_length = 20;
+	rounded_box_dimensions = [HANGER_HEIGHT, HANGER_WIDTH, rounded_box_length];
+
+	translate(rounded_box_offset) 
+		roundedBox(rounded_box_dimensions, radius=1);
+}
+
 module hangerCentralBox() {
 	rounded_box_offset = [0, 0, -0.75];
 	rounded_box_length = 20;
@@ -79,8 +88,7 @@ module hangerCentralBox() {
 
 	translate([0, 0, half(HANGER_WIDTH + HANGER_HEIGHT)]) 
 		difference() {
-            translate(rounded_box_offset) 
-				roundedBox(rounded_box_dimensions, radius=1);
+            hangerCentralExternalBox();
 
             rotate(cylinder_rotation) 
 				cylinder(r= half(HANGER_INTERNAL_HEIGHT), h= HANGER_WIDTH + DELTA, center=true);

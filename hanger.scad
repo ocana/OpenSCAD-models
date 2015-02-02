@@ -80,7 +80,8 @@ module hangerCentralBox() {
 }
 
 module hangerCornerBox() {
-	roundedBox([HANGER_HEIGHT, HANGER_WIDTH, HANGER_WIDTH], radius=1, sidesonly=true);
+	dimensions = [HANGER_HEIGHT, HANGER_WIDTH, HANGER_WIDTH];
+	roundedBox(dimensions, radius=1, sidesonly=true);
 }
 
 module hangerBox() {

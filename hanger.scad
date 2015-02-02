@@ -110,8 +110,8 @@ module internalCurvedPart() {
 }
 
 module hangerRoundedEnd() {
-	translate([D/2 + t/2, D/2, 0]) 
-		roundedBox([t, 2, h], radius=1, sidesonly=true);
+	translate([half(HANGER_INTERNAL_HEIGHT) + half(HANGER_INTERNAL_THICKNESS), half(HANGER_INTERNAL_HEIGHT), 0]) 
+		roundedBox([HANGER_INTERNAL_THICKNESS, 2, HANGER_WIDTH], radius=1, sidesonly=true);
 }
 
 module hangerCurvedPart() {

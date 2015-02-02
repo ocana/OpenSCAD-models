@@ -26,6 +26,20 @@ module torus(diameter, tubeDiameter){
 			circle(r = radius(tubeDiameter));
 }
 
+module cuboid() {
+	cuboid_length = HOOK_DIAMETER + TORUS_DIAMETER;
+	cuboid_width = half(cuboid_length);
+	cuboid_height = HOOK_DIAMETER + DELTA;
+	dimensions = [cuboid_length, cuboid_width, cuboid_height];
+
+	offset_x = NEGATIVE_FACTOR * half(cuboid_length);
+	offset_z = NEGATIVE_FACTOR * half(cuboid_height);
+	offset = [offset_x, 0, offset_z];
+
+	translate(offset)
+		cube(dimensions);
+}
+
 module hook() {
 	cuboid_length = HOOK_DIAMETER + TORUS_DIAMETER;
 	cuboid_width = half(cuboid_length);

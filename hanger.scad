@@ -3,6 +3,8 @@ use <MCAD/boxes.scad>
 HOOK_DIAMETER = 5;
 TORUS_DIAMETER = 12;
 
+DELTA = 0.1;
+
 D=7.5;
 t=3;
 h=10;
@@ -32,7 +34,7 @@ module hook() {
             torus(TORUS_DIAMETER, HOOK_DIAMETER);
 
             translate([offset_x, 0, offset_z]) 
-					cube([torus_length, half(torus_length), HOOK_DIAMETER + 0.1]);
+					cube([torus_length, half(torus_length), HOOK_DIAMETER + DELTA]);
         }
 
         translate([radius(TORUS_DIAMETER), 0, 0]) 

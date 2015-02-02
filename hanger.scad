@@ -30,7 +30,7 @@ module hook() {
             torus(TORUS_DIAMETER, HOOK_DIAMETER);
 
             translate([offset_x, 0, offset_z]) 
-					cube([HOOK_DIAMETER + TORUS_DIAMETER, radius(HOOK_DIAMETER) + radius(TORUS_DIAMETER),HOOK_DIAMETER + 0.1]);
+					cube([torus_length, radius(HOOK_DIAMETER) + radius(TORUS_DIAMETER),HOOK_DIAMETER + 0.1]);
         }
 
         translate([radius(TORUS_DIAMETER), 0, 0]) 

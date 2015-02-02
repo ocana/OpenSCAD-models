@@ -53,9 +53,7 @@ module hook() {
     union() {
         difference() {
             torus(TORUS_DIAMETER, HOOK_DIAMETER);
-
-            translate(offset)
-				cube(dimensions);
+            cuboid();
         }
 
         translate([radius(TORUS_DIAMETER), 0, 0]) 

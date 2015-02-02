@@ -101,7 +101,8 @@ module internalCurvedPart() {
     translate(first_cuboid_offset) 
 		cube(first_cuboid_dimensions, center=true);
 	
-	second_cuboid_dimensions = [HANGER_HEIGHT, 15.6, HANGER_WIDTH + DELTA];
+	second_cuboid_length = 15.6;
+	second_cuboid_dimensions = [HANGER_HEIGHT, second_cuboid_length, HANGER_WIDTH + DELTA];
 	second_cuboid_offset = [3, 11.5, 0];
 	translate(second_cuboid_offset) 
 		cube(second_cuboid_dimensions, center=true);

@@ -162,9 +162,8 @@ module hanger() {
 
     hangerBox();
 
-    translate([0, l -3 + h - radius(TORUS_DIAMETER)- HOOK_DIAMETER/2, radius(TORUS_DIAMETER) + h/2 + R*2])
-    	rotate([180, 0, 0]) 
-    		rotate([0, 90, 0]) 
+    translate([0, 14.75, 24.5])
+    	rotate([180, 90, 0]) 
     			hook();
 }
 

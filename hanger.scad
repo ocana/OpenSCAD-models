@@ -7,10 +7,12 @@ TORUS_DIAMETER = 12;
 
 DELTA = 0.1;
 
+HANGER_HEIGHT = 13.5;
+
 D = 7.5;
 t = 3;
 h = 10;
-R = 6.75;
+R = half(HANGER_HEIGHT);
 
 $fs = 0.05;
 

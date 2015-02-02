@@ -83,13 +83,15 @@ module hangerCentralInternalBox() {
 	cube_dimensions = [HANGER_INTERNAL_HEIGHT, HANGER_WIDTH + DELTA, HANGER_INTERNAL_HEIGHT];
 
 	rotate(cylinder_rotation) 
-				cylinder(r= half(HANGER_INTERNAL_HEIGHT), h= HANGER_WIDTH + DELTA, center=true);
-            translate(cube_offset) 
-				cube(cube_dimensions, center=true);
+		cylinder(r= half(HANGER_INTERNAL_HEIGHT), h= HANGER_WIDTH + DELTA, center=true);
+	translate(cube_offset) 
+		cube(cube_dimensions, center=true);
 }
 
 module hangerCentralBox() {
-	translate([0, 0, half(HANGER_WIDTH + HANGER_HEIGHT)]) 
+	offset = [0, 0, half(HANGER_WIDTH + HANGER_HEIGHT)];
+
+	translate(offset) 
 		difference() {
 			hangerCentralExternalBox();
 			hangerCentralInternalBox();

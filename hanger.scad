@@ -84,8 +84,8 @@ module externalCurvedPart() {
 	union() {
 		cylinder(r= half(HANGER_HEIGHT), h= HANGER_WIDTH, center=true);
 
-		translate([0, l/2, 0]) 
-			cube([HANGER_HEIGHT, l, HANGER_WIDTH], center=true);
+		translate([0, half(CUBE_LENGTH), 0]) 
+			cube([HANGER_HEIGHT, CUBE_LENGTH, HANGER_WIDTH], center=true);
 	}
 }
 

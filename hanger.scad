@@ -55,8 +55,7 @@ module hookRoundedEnd(diameter, tubeDiameter){
 module hook() {
     union() {
         halfTorus(TORUS_DIAMETER, HOOK_DIAMETER);
-        translate([radius(TORUS_DIAMETER), 0, 0]) 
-				sphere(r = radius(HOOK_DIAMETER));
+        hookRoundedEnd(TORUS_DIAMETER, HOOK_DIAMETER);
     };
 }
 

@@ -15,14 +15,7 @@ CUBE_LENGTH = 16.25;
 HANGER_INTERNAL_THICKNESS = 3;
 HANGER_INTERNAL_HEIGHT = HANGER_HEIGHT - 2*HANGER_INTERNAL_THICKNESS;
 
-D = HANGER_INTERNAL_HEIGHT;
-t = HANGER_INTERNAL_THICKNESS;
-h = HANGER_WIDTH;
-R = half(HANGER_HEIGHT);
-
 $fs = 0.05;
-
-l = CUBE_LENGTH;
 
 function half(number) = number / 2;
 
@@ -162,11 +155,11 @@ module hanger() {
     hangerBox();
 
 	offset = [0, 14.75, 24.5];
-	rotation = [180, 90, 0];
 	
     translate(offset)
-    	rotate(rotation) 
-    		hook();
+		rotate([180, 0, 0]) 
+    		rotate([0, 90, 0]) 
+    			hook();
 }
 
 mirror([0, 1, 0]) 

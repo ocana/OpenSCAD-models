@@ -21,6 +21,8 @@ module torus(diameter, tubeDiameter){
 }
 
 module hook() {
+	offset_x = -radius(HOOK_DIAMETER) -radius(TORUS_DIAMETER);
+
     union() {
         difference() {
             torus(TORUS_DIAMETER, HOOK_DIAMETER);

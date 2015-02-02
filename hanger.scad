@@ -68,12 +68,14 @@ module hook() {
 }
 
 module hangerCentralBox() {
-	rounded_box_dimensions = [HANGER_HEIGHT, HANGER_WIDTH, 20];
+	rounded_box_length = 20;
+	rounded_box_dimensions = [HANGER_HEIGHT, HANGER_WIDTH, rounded_box_length];
 
 	translate([0, 0, half(HANGER_WIDTH + HANGER_HEIGHT)]) 
 		difference() {
             translate([0, 0, HOOK_DIAMETER/4 -2]) 
-				roundedBox([HANGER_HEIGHT, HANGER_WIDTH, HANGER_HEIGHT +4 + half(HOOK_DIAMETER)], radius=1);
+				roundedBox(rounded_box_dimensions, radius=1);
+
             rotate([90, 0, 0]) 
 				cylinder(r= half(HANGER_INTERNAL_HEIGHT), h= HANGER_WIDTH + DELTA, center=true);
             translate([half(HANGER_INTERNAL_HEIGHT), 0, 0]) 

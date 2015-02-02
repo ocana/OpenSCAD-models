@@ -28,8 +28,9 @@ module torus(diameter, tubeDiameter){
 
 module hook() {
 	cuboid_length = HOOK_DIAMETER + TORUS_DIAMETER;
+	cuboid_width = half(cuboid_length);
 	cuboid_height = HOOK_DIAMETER + DELTA;
-	dimensions = [cuboid_length, half(cuboid_length), cuboid_height];
+	dimensions = [cuboid_length, cuboid_width, cuboid_height];
 
 	offset_x = NEGATIVE_FACTOR * half(cuboid_length);
 	offset_z = NEGATIVE_FACTOR * half(cuboid_height);

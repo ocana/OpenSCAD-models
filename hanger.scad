@@ -41,15 +41,6 @@ module cuboid() {
 }
 
 module hook() {
-	cuboid_length = HOOK_DIAMETER + TORUS_DIAMETER;
-	cuboid_width = half(cuboid_length);
-	cuboid_height = HOOK_DIAMETER + DELTA;
-	dimensions = [cuboid_length, cuboid_width, cuboid_height];
-
-	offset_x = NEGATIVE_FACTOR * half(cuboid_length);
-	offset_z = NEGATIVE_FACTOR * half(cuboid_height);
-	offset = [offset_x, 0, offset_z];
-
     union() {
         difference() {
             torus(TORUS_DIAMETER, HOOK_DIAMETER);

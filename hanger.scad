@@ -79,10 +79,14 @@ module hangerCentralBox() {
 		}
 }
 
+module hangerCornerBox() {
+	roundedBox([HANGER_HEIGHT, HANGER_WIDTH, HANGER_WIDTH], radius=1, sidesonly=true);
+}
+
 module hangerBox() {
 	translate([0, CUBE_LENGTH -HANGER_INTERNAL_THICKNESS + half(HANGER_WIDTH), 0]) {
-        hangerCentralBox();
-		roundedBox([HANGER_HEIGHT, HANGER_WIDTH, HANGER_WIDTH], radius=1, sidesonly=true);
+    	hangerCentralBox();
+		hangerCornerBox();
     }
 }
 

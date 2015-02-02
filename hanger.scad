@@ -15,10 +15,11 @@ CUBE_LENGTH = 16.25;
 HANGER_INTERNAL_THICKNESS = 3;
 HANGER_INTERNAL_HEIGHT = HANGER_HEIGHT - 2*HANGER_INTERNAL_THICKNESS;
 
-$fs = 0.05;
+FINE = 0.05;
+
+$fs = FINE;
 
 function half(number) = number / 2;
-
 function radius(diameter) = half(diameter);
 
 module torus(diameter, tubeDiameter){

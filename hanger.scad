@@ -109,14 +109,18 @@ module internalCurvedPart() {
 		cube(second_cuboid_dimensions, center=true);
 }
 
+module hangerRoundedEnd() {
+	translate([D/2 + t/2, D/2, 0]) 
+		roundedBox([t, 2, h], radius=1, sidesonly=true);
+}
+
 module hangerCurvedPart() {
 	difference() {
         externalCurvedPart();
         internalCurvedPart();
     }
 
-    translate([D/2 + t/2, D/2, 0]) 
-		roundedBox([t, 2, h], radius=1, sidesonly=true);
+    hangerRoundedEnd();
 }
 
 module hanger() {

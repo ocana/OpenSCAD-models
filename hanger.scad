@@ -159,12 +159,14 @@ module hangerCurvedPart() {
 
 module hanger() {
     hangerCurvedPart();
-
     hangerBox();
 
-    translate([0, 14.75, 24.5])
-    	rotate([180, 90, 0]) 
-    			hook();
+	offset = [0, 14.75, 24.5];
+	rotation = [180, 90, 0];
+	
+    translate(offset)
+    	rotate(rotation) 
+    		hook();
 }
 
 mirror([0, 1, 0]) 

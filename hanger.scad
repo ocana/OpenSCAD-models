@@ -17,7 +17,7 @@ R = half(HANGER_HEIGHT);
 
 $fs = 0.05;
 
-l = D + D/2 + 5;
+l = 16.25;
 
 function half(number) = number / 2;
 

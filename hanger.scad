@@ -92,13 +92,13 @@ module externalCurvedPart() {
 }
 
 module internalCurvedPart() {
-	cylinder(r= D/2, h= h + 0.1, center=true);
+	cylinder(r= D/2, h= HANGER_WIDTH + DELTA, center=true);
 
     translate([0, l/2, 0]) 
-		cube([D, l + 0.1, h + 0.1], center=true);
+		cube([D, l + DELTA, HANGER_WIDTH + DELTA], center=true);
 
 	translate([t, D + 4, 0]) 
-		cube([2*R, D + 8.1, h + 0.1], center=true);
+		cube([HANGER_HEIGHT, D + 8.1, HANGER_WIDTH + DELTA], center=true);
 }
 
 module hangerCurvedPart() {

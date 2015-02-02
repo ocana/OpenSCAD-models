@@ -10,6 +10,8 @@ DELTA = 0.1;
 HANGER_HEIGHT = 13.5;
 HANGER_WIDTH = 10;
 
+CUBE_LENGTH = 16.25;
+
 D = 7.5;
 t = 3;
 h = HANGER_WIDTH;
@@ -17,7 +19,7 @@ R = half(HANGER_HEIGHT);
 
 $fs = 0.05;
 
-l = 16.25;
+l = CUBE_LENGTH;
 
 function half(number) = number / 2;
 

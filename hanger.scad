@@ -84,17 +84,20 @@ module externalCurvedPart() {
 	}
 }
 
+module internalCurvedPart() {
+	cylinder(r= D/2, h= h + 0.1, center=true);
+
+    translate([0, l/2, 0]) 
+		cube([D, l + 0.1, h + 0.1], center=true);
+
+	translate([t, D + 4, 0]) 
+		cube([2*R, D + 8.1, h + 0.1], center=true);
+}
+
 module hangerCurvedPart() {
 	difference() {
         externalCurvedPart();
-
-        cylinder(r= D/2, h= h + 0.1, center=true);
-
-        translate([0, l/2, 0]) 
-			cube([D, l + 0.1, h + 0.1], center=true);
-
-        translate([t, D + 4, 0]) 
-			cube([2*R, D + 8.1, h + 0.1], center=true);
+        internalCurvedPart();
     }
 
     translate([D/2 + t/2, D/2, 0]) 

@@ -79,10 +79,10 @@ module hangerBox() {
 
 module externalCurvedPart() {
 	union() {
-		cylinder(r= R, h= h, center=true);
+		cylinder(r= half(HANGER_HEIGHT), h= h, center=true);
 
 		translate([0, l/2, 0]) 
-			cube([R*2, l, h], center=true);
+			cube([HANGER_HEIGHT, l, h], center=true);
 	}
 }
 

@@ -76,24 +76,23 @@ module hangerCentralExternalBox() {
 		roundedBox(rounded_box_dimensions, radius=1);
 }
 
-module hangerCentralBox() {
-	rounded_box_offset = [0, 0, -0.75];
-	rounded_box_length = 20;
-	rounded_box_dimensions = [HANGER_HEIGHT, HANGER_WIDTH, rounded_box_length];
-
+module hangerCentralInternalBox() {
 	cylinder_rotation = [90, 0, 0];
 
 	cube_offset = [half(HANGER_INTERNAL_HEIGHT), 0, 0];
 	cube_dimensions = [HANGER_INTERNAL_HEIGHT, HANGER_WIDTH + DELTA, HANGER_INTERNAL_HEIGHT];
 
-	translate([0, 0, half(HANGER_WIDTH + HANGER_HEIGHT)]) 
-		difference() {
-            hangerCentralExternalBox();
-
-            rotate(cylinder_rotation) 
+	rotate(cylinder_rotation) 
 				cylinder(r= half(HANGER_INTERNAL_HEIGHT), h= HANGER_WIDTH + DELTA, center=true);
             translate(cube_offset) 
 				cube(cube_dimensions, center=true);
+}
+
+module hangerCentralBox() {
+	translate([0, 0, half(HANGER_WIDTH + HANGER_HEIGHT)]) 
+		difference() {
+			hangerCentralExternalBox();
+			hangerCentralInternalBox();
 		}
 }
 

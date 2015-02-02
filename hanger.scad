@@ -67,19 +67,22 @@ module hook() {
     };
 }
 
-module hangerBox() {
-	translate([0, CUBE_LENGTH -HANGER_INTERNAL_THICKNESS + half(HANGER_WIDTH), 0]) {
-        roundedBox([HANGER_HEIGHT, HANGER_WIDTH, HANGER_WIDTH], radius=1, sidesonly=true);
-
-        translate([0, 0, half(HANGER_WIDTH) + half(HANGER_HEIGHT)]) 
-			difference() {
+module hangerCentralBox() {
+	translate([0, 0, half(HANGER_WIDTH) + half(HANGER_HEIGHT)]) 
+		difference() {
             translate([0, 0, HOOK_DIAMETER/4 -2]) 
 				roundedBox([HANGER_HEIGHT, HANGER_WIDTH, HANGER_HEIGHT +4 + half(HOOK_DIAMETER)], radius=1);
             rotate([90, 0, 0]) 
 				cylinder(r= half(HANGER_INTERNAL_HEIGHT), h= HANGER_WIDTH + DELTA, center=true);
             translate([half(HANGER_INTERNAL_HEIGHT), 0, 0]) 
 				cube([HANGER_INTERNAL_HEIGHT, HANGER_WIDTH + DELTA, HANGER_INTERNAL_HEIGHT], center=true);
-        	}
+		}
+}
+
+module hangerBox() {
+	translate([0, CUBE_LENGTH -HANGER_INTERNAL_THICKNESS + half(HANGER_WIDTH), 0]) {
+        hangerCentralBox();
+		roundedBox([HANGER_HEIGHT, HANGER_WIDTH, HANGER_WIDTH], radius=1, sidesonly=true);
     }
 }
 

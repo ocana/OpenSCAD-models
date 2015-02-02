@@ -68,12 +68,13 @@ module hook() {
 }
 
 module hangerCentralBox() {
+	rounded_box_offset = [0, 0, -0.75];
 	rounded_box_length = 20;
 	rounded_box_dimensions = [HANGER_HEIGHT, HANGER_WIDTH, rounded_box_length];
 
 	translate([0, 0, half(HANGER_WIDTH + HANGER_HEIGHT)]) 
 		difference() {
-            translate([0, 0, HOOK_DIAMETER/4 -2]) 
+            translate(rounded_box_offset) 
 				roundedBox(rounded_box_dimensions, radius=1);
 
             rotate([90, 0, 0]) 

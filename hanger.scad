@@ -95,9 +95,11 @@ module externalCurvedPart() {
 
 module internalCurvedPart() {
 	cylinder(r= half(HANGER_INTERNAL_HEIGHT), h= HANGER_WIDTH + DELTA, center=true);
-
-    translate([0, half(CUBE_LENGTH), 0]) 
-		cube([HANGER_INTERNAL_HEIGHT, CUBE_LENGTH + DELTA, HANGER_WIDTH + DELTA], center=true);
+	
+	first_cuboid_dimensions = [HANGER_INTERNAL_HEIGHT, CUBE_LENGTH + DELTA, HANGER_WIDTH + DELTA];
+	first_cuboid_offset = [0, half(CUBE_LENGTH), 0];
+    translate(first_cuboid_offset) 
+		cube(first_cuboid_dimensions, center=true);
 
 	translate([t, 11.5, 0]) 
 		cube([HANGER_HEIGHT, 15.6, HANGER_WIDTH + DELTA], center=true);

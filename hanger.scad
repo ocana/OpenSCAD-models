@@ -100,9 +100,11 @@ module internalCurvedPart() {
 	first_cuboid_offset = [0, half(CUBE_LENGTH), 0];
     translate(first_cuboid_offset) 
 		cube(first_cuboid_dimensions, center=true);
-
-	translate([t, 11.5, 0]) 
-		cube([HANGER_HEIGHT, 15.6, HANGER_WIDTH + DELTA], center=true);
+	
+	second_cuboid_dimensions = [HANGER_HEIGHT, 15.6, HANGER_WIDTH + DELTA];
+	second_cuboid_offset = [3, 11.5, 0];
+	translate(second_cuboid_offset) 
+		cube(second_cuboid_dimensions, center=true);
 }
 
 module hangerCurvedPart() {

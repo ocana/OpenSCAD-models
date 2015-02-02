@@ -14,7 +14,7 @@ l=D+D/2+5;
 
 function half(number) = number / 2;
 
-function radius(diameter) = diameter / 2;
+function radius(diameter) = half(diameter);
 
 module torus(diameter, tubeDiameter){
 	rotate_extrude(convexity = 10) 

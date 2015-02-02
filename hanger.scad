@@ -1,5 +1,7 @@
 use <MCAD/boxes.scad>
 
+NEGATIVE_FACTOR = -1;
+
 HOOK_DIAMETER = 5;
 TORUS_DIAMETER = 12;
 
@@ -30,7 +32,7 @@ module hook() {
 	dimensions = [torus_length, half(torus_length), cuboid_height];
 
 	offset_x = -radius(HOOK_DIAMETER) -radius(TORUS_DIAMETER);
-	offset_z = -1 * (half(cuboid_height));
+	offset_z = NEGATIVE_FACTOR * (half(cuboid_height));
 
     union() {
         difference() {

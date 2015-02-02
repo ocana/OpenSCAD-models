@@ -40,6 +40,13 @@ module cuboid(diameter, tubeDiameter) {
 		cube(dimensions);
 }
 
+module halfTorus(diameter, tubeDiameter){
+	difference() {
+            torus(diameter, tubeDiameter);
+            cuboid(diameter, tubeDiameter);
+        }
+}
+
 module hook() {
     union() {
         difference() {

@@ -7,14 +7,14 @@ TORUS_DIAMETER = 12;
 
 DELTA = 0.1;
 
-D=7.5;
-t=3;
-h=10;
-R=D/2+t;
+D = 7.5;
+t = 3;
+h = 10;
+R = 6.75;
 
-$fs=0.05;
+$fs = 0.05;
 
-l=D+D/2+5;
+l = D + D/2 + 5;
 
 function half(number) = number / 2;
 

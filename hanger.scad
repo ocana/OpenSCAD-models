@@ -62,8 +62,10 @@ module hook() {
 module hanger() {
     difference() {
         union() {
-            cylinder(r=R,h=h,center=true);
-            translate([0,l/2,0]) cube([R*2,l,h],center=true);
+            cylinder(r=R, h=h, center=true);
+
+            translate([0, l/2, 0]) 
+				cube([R*2, l, h], center=true);
         }
 
         cylinder(r=D/2,h=h+0.1,center=true);

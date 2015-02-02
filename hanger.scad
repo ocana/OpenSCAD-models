@@ -8,10 +8,11 @@ TORUS_DIAMETER = 12;
 DELTA = 0.1;
 
 HANGER_HEIGHT = 13.5;
+HANGER_WIDTH = 10;
 
 D = 7.5;
 t = 3;
-h = 10;
+h = HANGER_WIDTH;
 R = half(HANGER_HEIGHT);
 
 $fs = 0.05;
@@ -79,10 +80,10 @@ module hangerBox() {
 
 module externalCurvedPart() {
 	union() {
-		cylinder(r= half(HANGER_HEIGHT), h= h, center=true);
+		cylinder(r= half(HANGER_HEIGHT), h= HANGER_WIDTH, center=true);
 
 		translate([0, l/2, 0]) 
-			cube([HANGER_HEIGHT, l, h], center=true);
+			cube([HANGER_HEIGHT, l, HANGER_WIDTH], center=true);
 	}
 }
 

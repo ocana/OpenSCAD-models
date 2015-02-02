@@ -65,26 +65,42 @@ module hanger() {
             cylinder(r=R,h=h,center=true);
             translate([0,l/2,0]) cube([R*2,l,h],center=true);
         }
+
         cylinder(r=D/2,h=h+0.1,center=true);
-        translate([0,l/2,0]) cube([D,l+0.1,h+0.1],center=true);
-        translate([t,D+4,0]) cube([2*R,D+8.1,h+0.1],center=true);
+
+        translate([0,l/2,0]) 
+			cube([D,l+0.1,h+0.1],center=true);
+
+        translate([t,D+4,0]) 
+			cube([2*R,D+8.1,h+0.1],center=true);
     }
-    translate([D/2+t/2,D/2,0]) roundedBox([t,2,h],radius=1,sidesonly=true);
+
+    translate([D/2+t/2,D/2,0]) 
+		roundedBox([t,2,h],radius=1,sidesonly=true);
+
     translate([0,l-3+h/2,0]) {
         roundedBox([R*2,h,h],radius=1,sidesonly=true);
-        translate([0,0,h/2+R]) difference() {
-            translate([0,0,HOOK_DIAMETER/4-2]) roundedBox([R*2,h,R*2+4+HOOK_DIAMETER/2],radius=1);
-            rotate([90,0,0]) cylinder(r=D/2,h=h+0.1,center=true);
-            translate([D/2,0,0]) cube([D,h+0.1,D],center=true);
-        }
+
+        translate([0,0,h/2+R]) 
+			difference() {
+            translate([0,0,HOOK_DIAMETER/4-2]) 
+				roundedBox([R*2,h,R*2+4+HOOK_DIAMETER/2],radius=1);
+            rotate([90,0,0]) 
+				cylinder(r=D/2,h=h+0.1,center=true);
+            translate([D/2,0,0]) 
+				cube([D,h+0.1,D],center=true);
+        	}
     }
-    translate([0,l-3+h-radius(TORUS_DIAMETER)-HOOK_DIAMETER/2,radius(TORUS_DIAMETER)+h/2+R*2])
-    rotate([180,0,0]) 
-    rotate([0,90,0]) 
-    hook();
+
+    translate([0, l -3 + h - radius(TORUS_DIAMETER)- HOOK_DIAMETER/2, radius(TORUS_DIAMETER) + h/2 + R*2])
+    	rotate([180, 0, 0]) 
+    		rotate([0, 90, 0]) 
+    			hook();
 }
 
-mirror([0,1,0]) rotate([0,-90,0]) hanger();
+mirror([0,1,0]) 
+	rotate([0,-90,0]) 
+		hanger();
 
 
 

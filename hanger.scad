@@ -25,11 +25,12 @@ module torus(diameter, tubeDiameter){
 }
 
 module hook() {
-	offset_x = -radius(HOOK_DIAMETER) -radius(TORUS_DIAMETER);
-	offset_z = -radius(HOOK_DIAMETER) - 0.05;
 	torus_length = HOOK_DIAMETER + TORUS_DIAMETER;
 	cuboid_height = HOOK_DIAMETER + DELTA;
 	dimensions = [torus_length, half(torus_length), cuboid_height];
+
+	offset_x = -radius(HOOK_DIAMETER) -radius(TORUS_DIAMETER);
+	offset_z = -1 * (half(cuboid_height));
 
     union() {
         difference() {

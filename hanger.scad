@@ -75,8 +75,8 @@ module hangerBox() {
     }
 }
 
-module hanger() {
-    difference() {
+module hangerCurvedPart() {
+	difference() {
         union() {
             cylinder(r= R, h= h, center=true);
 
@@ -95,6 +95,10 @@ module hanger() {
 
     translate([D/2 + t/2, D/2, 0]) 
 		roundedBox([t, 2, h], radius=1, sidesonly=true);
+}
+
+module hanger() {
+    hangerCurvedPart();
 
     hangerBox();
 

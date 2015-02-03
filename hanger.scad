@@ -1,11 +1,7 @@
 use <MCAD/boxes.scad>
 
-NEGATIVE_FACTOR = -1;
-
 HOOK_DIAMETER = 5;
 TORUS_DIAMETER = 12;
-
-DELTA = 0.1;
 
 HANGER_HEIGHT = 13.5;
 HANGER_WIDTH = 10;
@@ -15,8 +11,9 @@ CUBE_LENGTH = 16.25;
 HANGER_INTERNAL_THICKNESS = 3;
 HANGER_INTERNAL_HEIGHT = HANGER_HEIGHT - 2*HANGER_INTERNAL_THICKNESS;
 
+NEGATIVE_FACTOR = -1;
+DELTA = 0.1;
 FINE = 0.05;
-
 $fs = FINE;
 
 function half(number) = number / 2;
@@ -162,6 +159,8 @@ module hanger() {
     		rotate([0, 90, 0]) 
     			hook();
 }
+
+
 
 mirror([0, 1, 0]) 
 	rotate([0, -90, 0]) 

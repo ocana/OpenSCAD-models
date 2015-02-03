@@ -5,6 +5,7 @@ TORUS_DIAMETER = 12;
 
 HANGER_HEIGHT = 13.5;
 HANGER_WIDTH = 10;
+HANGER_ROTATION = [0, -90, 0];
 
 CUBE_LENGTH = 16.25;
 
@@ -15,6 +16,8 @@ NEGATIVE_FACTOR = -1;
 DELTA = 0.1;
 FINE = 0.05;
 $fs = FINE;
+
+Y_AXIS = [0, 1, 0];
 
 function half(number) = number / 2;
 function radius(diameter) = half(diameter);
@@ -160,10 +163,8 @@ module hanger() {
     			hook();
 }
 
-
-
-mirror([0, 1, 0]) 
-	rotate([0, -90, 0]) 
+mirror(Y_AXIS) 
+	rotate(HANGER_ROTATION) 
 		hanger();
 
 

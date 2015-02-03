@@ -156,10 +156,13 @@ module hanger() {
     hangerBox();
 
 	offset = [0, 14.75, 24.5];
+
+	x_rotation = [180, 0, 0];
+	y_rotation = [0, 90, 0];
 	
     translate(offset)
-		rotate([180, 0, 0]) 
-    		rotate([0, 90, 0]) 
+		rotate(x_rotation) 
+    		rotate(y_rotation) 
     			hook();
 }
 
